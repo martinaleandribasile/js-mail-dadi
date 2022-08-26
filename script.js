@@ -17,16 +17,14 @@ nameSurname.innerHTML = inputData.value;
 const winText = "hai vinto"
 const loseText = "hai perso"
 const draw = "pareggio"
-
-buttonPlay.addEventListener("click", function () {
-    nameSurname.innerHTML = inputData.value;
+function game() {
     let nameSurnameNumber = Math.floor((Math.random() * 6) + 1);
     let pcNumber = Math.floor((Math.random() * 6) + 1);
     boxStart.classList.add("d-none");
     boxPlay.classList.remove("d-none");
     nameSurnameResultNumber.innerHTML = nameSurnameNumber;
     pcResultNumber.innerHTML = pcNumber;
-
+    nameSurname.innerHTML = inputData.value;
     if (nameSurnameNumber > pcNumber) {
         pcResult.innerHTML = loseText;
         pcResult.classList.add("text-danger");
@@ -45,10 +43,12 @@ buttonPlay.addEventListener("click", function () {
         nameSurnameResult.innerHTML = draw;
         nameSurnameResult.classList.add("text-info");
     };
+}
 
-
+buttonPlay.addEventListener("click", function () {
+    game()
 });
 
 buttonReload.addEventListener("click", function () {
-    window.location.reload();
-})
+    game();
+});
