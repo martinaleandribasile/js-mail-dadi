@@ -27,21 +27,21 @@ function game() {
     nameSurname.innerHTML = inputData.value;
     if (nameSurnameNumber > pcNumber) {
         pcResult.innerHTML = loseText;
-        pcResult.classList.add("text-danger");
+        pcResult.className = "text-danger";
         nameSurnameResult.innerHTML = winText;
-        nameSurnameResult.classList.add("text-success");
+        nameSurnameResult.className = "text-success";
     }
     else if (nameSurnameNumber < pcNumber) {
         pcResult.innerHTML = winText;
-        pcResult.classList.add("text-success");
+        pcResult.className = "text-success";
         nameSurnameResult.innerHTML = loseText;
-        nameSurnameResult.classList.add("text-danger");
+        nameSurnameResult.className = "text-danger";
     }
     else {
         pcResult.innerHTML = draw;
-        pcResult.classList.add("text-info");
+        pcResult.className = "text-info";
         nameSurnameResult.innerHTML = draw;
-        nameSurnameResult.classList.add("text-info");
+        nameSurnameResult.className = "text-info";
     };
 }
 
